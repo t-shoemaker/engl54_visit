@@ -64,7 +64,7 @@ def per_token_perplexity(logits, labels):
     logits = logits[..., :-1, :].contiguous()
     labels = labels[..., 1:].contiguous()
 
-    # Sqeeze out batch dimensions
+    # Squeeze out batch dimensions
     logits, labels = logits.squeeze(), labels.squeeze()
 
     # Calculate the cross entropy loss and exponentiate it for token-by-token
